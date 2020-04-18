@@ -39,5 +39,17 @@ podTemplate(containers: [
         }
       }
     }
+
+    stage('Pull from ECR to EKS') {
+      steps {
+        sh
+        '''
+        kubectl -f apply deployment.yaml
+        '''
+      }
+      
+
+
+    }
   }
 }
