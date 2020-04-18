@@ -28,14 +28,14 @@ podTemplate(containers: [
       } 
       container('docker') {
         echo "Building docker image..."
-        docker.build("course-day-service", ".")
+        docker.build("course-day-service-registry", ".")
       }
     }
 
     stage('Push to ECR') {
       container('docker') {
         docker.withRegistry("${ECR_ADDRESS}", "ecr:eu-west-2:aws-access") {
-          docker.image("course-day-service").push("${DATETIME_TAG}")
+          docker.image("course-day-service-registry").push("${DATETIME_TAG}")
         }
       }
     }
