@@ -41,7 +41,7 @@ podTemplate(containers: [
     }
 
     stage('Pull from ECR to EKS') {
-      steps {
+      container('docker') {
         sh
         '''
         kubectl -f apply deployment.yaml
