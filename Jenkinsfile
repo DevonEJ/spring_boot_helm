@@ -43,6 +43,7 @@ podTemplate(containers: [
     stage ('Deploy') {
       git "${GIT_CODEBASE_REPO}"
       container('helm') {
+                sh "cd helm"
                 sh "helm install --set image.repository=718240196138.dkr.ecr.eu-west-2.amazonaws.com/course-day-service-registry --set image.tag=20-04-18_1605 course-data-service-registry ./spring-boot"
                }
            }
