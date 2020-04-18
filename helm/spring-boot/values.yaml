@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: REPLACE_ME
-  tag: REPLACE_ME
+  repository: 718240196138.dkr.ecr.eu-west-2.amazonaws.com/course-day-service-registry
+  tag: 	20-04-18_1605
   pullPolicy: IfNotPresent
 
 
